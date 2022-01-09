@@ -1,0 +1,10 @@
+FROM node:14.18.2
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY . /usr/src/app
+RUN npm install
+# development production 5565
+ENV NODE_ENV production
+EXPOSE 80
+
+CMD node /usr/src/app/bin/www
